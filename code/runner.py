@@ -44,7 +44,7 @@ class LyricGenRunner:
 
         # if load path specified, load a saved model
         if model_load_path is not None:
-            self.saver.restore(self.sess, model_load_path)
+            self.saver.restore(self.sess, tf.train.latest_checkpoint(model_load_path))
             print 'Model restored from ' + model_load_path
 
 
